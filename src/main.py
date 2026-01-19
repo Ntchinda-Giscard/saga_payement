@@ -1,0 +1,18 @@
+from fastapi import FastAPI
+from .database.session import engine, Base
+from .routes import payment_routes
+
+# Create database tables
+Base.metadata.create_all(bind=engine)
+
+app = FastAPI(
+    title="Bus Booking - Payment Service",
+    description="Service for processing payments",
+    version="1.0.0"
+)
+
+app.include_router(payment_routes.router)
+
+@app.get("/health")
+def health_check():
+    return {"status": "healthy", "service": "PaymentService"}
