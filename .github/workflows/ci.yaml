@@ -5,7 +5,7 @@ on:
     branches: [ main, develop ]
     paths:
       - 'PaymentService/**'
-      - '.github/workflows/payment-service-ci-cd.yml'
+      - '.github/workflows/ci.yml'
   pull_request:
     branches: [ main ]
     paths:
