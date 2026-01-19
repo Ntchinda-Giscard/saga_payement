@@ -39,3 +39,5 @@ docker-compose*
 .idea
 *.md
 docs/
+pyproject.toml
+.python-version
