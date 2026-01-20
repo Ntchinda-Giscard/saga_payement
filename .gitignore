@@ -32,11 +32,9 @@ coverage.xml
 .hypothesis
 .DS_Store
 .dockerignore
-Dockerfile*
 docker-compose*
 .docker
 .vscode
 .idea
-*.md
 docs/
 .python-version
