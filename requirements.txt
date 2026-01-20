@@ -3,3 +3,4 @@ requests>=2.32.5
 sqlalchemy>=2.0.45
 uvicorn[standard]
 pydantic
+python-jose[cryptography]
