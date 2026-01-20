@@ -16,3 +16,7 @@ app.include_router(payment_routes.router)
 @app.get("/health")
 def health_check():
     return {"status": "healthy", "service": "PaymentService"}
+
+if __name__ == "__main__":
+    import uvicorn
+    uvicorn.run(app, host="0.0.0.0", port=8002)
