@@ -39,3 +39,4 @@ docker-compose*
 .idea
 *.md
 docs/
+.python-version
