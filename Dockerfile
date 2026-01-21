@@ -10,4 +10,4 @@ COPY /src src
 COPY --from=builder /app/.venv /app/.venv
 # COPY --from=builder /app .
 ENV PATH="/app/.venv/bin:$PATH"
-CMD ["main.py"]
+CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8002", "--workers", "2", "--log-level", "info"]
