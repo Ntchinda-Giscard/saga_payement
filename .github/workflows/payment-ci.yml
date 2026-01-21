@@ -5,12 +5,12 @@ on:
     branches: [ main, develop ]
     tags: [ 'v*' ]
     paths:
-      - 'PaymentService/**'
+      - '**'
       - '.github/workflows/payment-ci.yml'
   pull_request:
     branches: [ main ]
     paths:
-      - 'PaymentService/**'
+      - '**'
   workflow_dispatch:
 
 env:
@@ -36,19 +36,16 @@ jobs:
           enable-cache: false
 
       - name: Install dependencies
-        working-directory: ./PaymentService
         run: |
           uv pip install -r requirements.txt
 
       - name: Run linting
-        working-directory: ./PaymentService
         run: |
           # Add linting commands here
           # uv run ruff check .
           echo "Linting would run here"
 
       - name: Run tests
-        working-directory: ./PaymentService
         run: |
           # Add test commands here
           # uv run pytest tests/ -v
@@ -78,7 +75,7 @@ jobs:
       - name: Build and push Docker image
         uses: docker/build-push-action@v5
         with:
-          context: ./PaymentService
+          context: .
           push: ${{ github.event_name != 'pull_request' }}
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
