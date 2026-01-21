@@ -2,7 +2,7 @@ import httpx
 from fastapi import HTTPException, status
 
 class UserClient:
-    def __init__(self, base_url: str = "http://localhost:8001"): # UserService
+    def __init__(self, base_url: str = "http://localhost:8080"): # UserService
         self.base_url = base_url
     
     def get_booking(self, booking_id: int, token: str):
