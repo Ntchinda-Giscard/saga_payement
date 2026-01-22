@@ -16,7 +16,7 @@ from fastapi.security import OAuth2PasswordBearer
 from fastapi import Header
 
 # OAuth scheme for token extraction
-oauth2_scheme = OAuth2PasswordBearer(tokenUrl="http://localhost:8080/users/login")
+oauth2_scheme = OAuth2PasswordBearer(tokenUrl="http://localhost:8001/users/login")
 
 @router.post("/", response_model=PaymentResponse, status_code=status.HTTP_201_CREATED)
 def process_payment(
